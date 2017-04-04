@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>UCF MAE - Inventory Tracker</title>
+
+        <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <!-- top header -->
+                <nav class="navbar-inverse" id="signInHeader">
+                    <div class="page-width">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html" id="title">MAE Inventory Tracker</a>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#maeNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="maeNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#" data-toggle="modal" data-target="#signIn"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- bottom header -->
+                <div class="container-fluid" id="maeLogo">
+                    <div class="page-width">
+                        <a href="http://mae.ucf.edu/"><img src="images/mae-logo.png" class="mae-img"></a>
+                    </div>
+                </div>
+                
+                <!-- toolbar header -->
+                <div class="navbar-inverse" id="headerToolbar">
+                    <div class="page-width center-btns">
+                        <ul class="nav navbar-nav">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="body">
+                <div class="page-width">
+                    <!-- Search -->
+                    <!--<div class="container-fluid">
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input class="form-control" id="search" type="text" placeholder="Search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control">
+                                <option>All</option>
+                                <option>Id</option>
+                                <option>Item</option>
+                                <option>Stock</option>
+                                <option>Description</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <br>-->
+
+                    <!-- Table -->
+                    <div class="container-fluid">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Inventory</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table id="invTable" class="table table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Item</th>
+                                                <th>Stock</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Go Pro</td>
+                                                <td class="warning">2</td>
+                                                <td>Camera for recording stuff.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Mini Engine</td>
+                                                <td class="success">4</td>
+                                                <td>Vroom vroom</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Metal Sheet</td>
+                                                <td class="success">8</td>
+                                                <td>10x10</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Axle</td>
+                                                <td class="warning">1</td>
+                                                <td>Test Description</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>HD Go Pro</td>
+                                                <td class="danger">0</td>
+                                                <td>Camera for recording stuff.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Test</td>
+                                                <td class="danger">0</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">13</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">16</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">17</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">19</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">24</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">25</th>
+                                                <td>Test</td>
+                                                <td class="success">10</td>
+                                                <td>Test Description.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- footer -->
+            <div id="footer">
+                <div class="container-fluid">
+                    <div class="page-width">
+                        <hr>
+                        <p><b>MAE Inventory Tracker</b></p>
+                        <p>Spring/Fall 2017 - UCF Computer Science - Senior Design</p>
+                        <p>James Hurley, Alexander Lascaibar, Naureen Lightwala, Johnathan Sattler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for signing in -->
+        <div id="signIn" class="modal fade" role="dialog">
+            <div class="modal-dialog signinModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <label><h4 class="modal-title">Sign In</h4></label>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="NID" type="text" class="form-control" name="NID" placeholder="NID">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a href="#" class="btn btn-default" data-toggle="modal" data-target="#roleChoose">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOR DEVELOPMENT USE ONLY -->
+        <!-- Modal for choosing role -->
+        <div id="roleChoose" class="modal fade" role="dialog">
+            <div class="modal-dialog" style="width: 350px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <label><h4 class="modal-title">&#60;&#60;For Development Use Only&#62;&#62;</h4></label>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <a href="index_student.html" class="btn btn-default">Student</a>
+                            <a href="index_adviser.html" class="btn btn-default">Adviser</a>
+                            <a href="index_admin.html" class="btn btn-default">Admin</a>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
